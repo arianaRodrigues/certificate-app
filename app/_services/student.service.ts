@@ -10,7 +10,7 @@ type ImportResponse =
 
 export const getAllStudentsData = async (): Promise<StudentType[]> => {
   try {
-    const response = await fetch(`${process.env.API_URL}/students`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/students`);
 
     if (!response.ok) {
       throw new Error("Erro ao certificados");
@@ -27,7 +27,7 @@ export const importFileXlsx = async (file: File): Promise<ImportResponse> => {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await fetch(`${process.env.API_URL}/students/upload`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/students/upload`, {
       method: "POST",
       body: formData,
     });
