@@ -8,7 +8,7 @@ type ImportResponse =
       errors?: string[];
     };
 
-const apiUrl = https://api-cert-c9xz.onrender.com/students
+const apiUrl = 'https://api-cert-c9xz.onrender.com/students'
 
 export const getAllStudentsData = async (): Promise<StudentType[]> => {
   try {
