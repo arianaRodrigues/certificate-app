@@ -29,7 +29,7 @@ export const uploadFileAction = async (file: File) => {
 
 export const getAllStudentsData = async (): Promise<StudentType[]> => {
   try {
-    const response = await fetch(`${apiUrl}`);
+    const response = await fetch(`${apiUrl}`, {cache: "no-store"});
     console.log(response);
     if (!response.ok) {
       throw new Error("Erro ao certificados");
