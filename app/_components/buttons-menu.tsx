@@ -10,7 +10,11 @@ import { AlertDialogButtonUploadedErrors } from "./alert-dialog-button-uploaded-
 
 export const ButtonsMenu = () => {
   const [importErrors, setImportErrors] = useState<string[] | null>(null);
-  console.log(importErrors, "Do button");
+
+  const handleExport = async () => {
+    window.location.href = "https://api-cert-c9xz.onrender.com/students/export";
+  };
+
   return (
     <>
       <SubHeaderLeft>
@@ -23,7 +27,7 @@ export const ButtonsMenu = () => {
             <AlertDialogButtonUploadedErrors importErrors={importErrors} />
           )}
           <ButtonAddFile setImportErrors={setImportErrors} />
-          <Button className="cursor-pointer">
+          <Button className="cursor-pointer" onClick={handleExport}>
             <Download />
             Exportar
           </Button>

@@ -1,7 +1,6 @@
 import { FileWarning } from "lucide-react";
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -37,7 +36,7 @@ export const AlertDialogButtonUploadedErrors = ({
           </span>
         </div>
       </AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogContent className="w-full max-w-[95vw] h-[80vh] flex flex-col">
         <AlertDialogHeader>
           <AlertDialogTitle>Histórico de erros da importação</AlertDialogTitle>
           <AlertDialogDescription>
@@ -45,7 +44,7 @@ export const AlertDialogButtonUploadedErrors = ({
             detalhes{" "}
           </AlertDialogDescription>
         </AlertDialogHeader>
-        <ul className="mt-2 list-disc list-inside space-y-2 text-sm text-zinc-700">
+        <ul className="mt-2 list-disc list-inside space-y-2 text-sm text-zinc-700 py-4 px-3 overflow-y-auto">
           {importErrors &&
             importErrors.map((err, idx) => (
               <li className="marker:text-red-500" key={idx}>
