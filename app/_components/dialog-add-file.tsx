@@ -38,7 +38,13 @@ export const DialogAddFile = ({
 
   const onSubmit = async (values: any) => {
     try {
-      const result = await uploadFileAction(values.file);
+      const result = (await uploadFileAction(values.file)) as {
+        type: "error" | "success";
+        error?: string;
+        errors?: string[];
+        successCount?: number;
+        errorCount?: number;
+      };
 
       console.log(result, "---RESULT");
 
