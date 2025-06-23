@@ -28,7 +28,7 @@ export const uploadFileAction = async (file: File) => {
 
 export const getAllStudentsData = async (): Promise<StudentType[]> => {
   try {
-    const response = await axios.get<StudentType[]>(`${apiUrl}`);
+    const response = await axios.get<StudentType[]>(apiUrl);
     return response.data;
   } catch (error: any) {
     const message =
